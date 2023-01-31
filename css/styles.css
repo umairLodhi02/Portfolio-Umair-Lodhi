@@ -1,0 +1,490 @@
+:root {
+  --color-dark: #050505;
+  --color-black: #000000;
+
+  --color-white: #ffffff;
+
+  --color-gray: #828282;
+  --color-light-gray: #efefef;
+
+  --color-primary: #cf1767;
+  --color-secondary: #5c5c5c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Font Awesome 6 Brands", sans-serif;
+
+  transition: all 0.2s ease-in;
+}
+body {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+/* GLOBAL STYLES */
+
+ul {
+  list-style: none;
+}
+ul li {
+  font-size: 1rem;
+}
+
+a {
+  color: var(--color-white);
+
+  text-decoration: none;
+  font-size: 1rem;
+}
+a:hover {
+  color: var(--color-primary);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* GLOBAL STYLES */
+
+/* UTILITY CLASSES */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1140px;
+  flex-direction: row;
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.gap1 {
+  gap: 1rem;
+}
+i {
+  font-size: 1.5rem;
+}
+.w-100 {
+  width: 100%;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+/* UTILITY CLASSES */
+
+#header {
+  background-color: var(--color-black);
+  padding: 30px 10px;
+  width: 100%;
+}
+
+.logo a {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-family: "Font Awesome 6 Brands", sans-serif;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+.pageLinks li {
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+.toggler {
+  background: transparent;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 0px 5px;
+  gap: 2px;
+  cursor: pointer;
+  display: none;
+}
+.toggler:hover {
+  transform: scale(1.2, 1.2);
+}
+.line {
+  height: 5px;
+  background-color: var(--color-gray);
+  margin-bottom: 3px;
+  border-radius: inherit;
+  width: 100%;
+}
+.toggler:hover .line {
+  background-color: var(--color-white);
+}
+.line.line1 {
+  width: 100%;
+}
+.line.line2 {
+  width: 80%;
+}
+.line.line3 {
+  width: 60%;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 1045;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  top: 0;
+  width: 3px;
+  background-color: var(--color-gray);
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+.mobileNav {
+  display: none;
+  z-index: -1;
+}
+
+@media screen and (max-width: 999px) {
+  .mobileNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1045;
+
+    height: 100vh;
+    width: 100%;
+    background: var(--color-black);
+    padding-top: 20vh;
+
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .mobileNav li {
+    margin-bottom: 10px;
+  }
+  .toggler {
+    display: flex;
+  }
+  .pageLinks {
+    display: none;
+  }
+  .socialLinks {
+    display: none;
+  }
+  .mobileNav .mobLinks {
+    flex-direction: column;
+  }
+  .mobileNav .innerlist {
+    flex-direction: row;
+  }
+}
+/* SECTION INTRO */
+
+#intro {
+  height: 100vh;
+  min-height: 700px;
+  width: 100%;
+  background-color: var(--color-dark);
+}
+#intro .container {
+  height: 100%;
+  max-width: 1140px;
+  padding-top: 20vh;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  position: relative;
+  width: 90%;
+}
+
+@media screen and (max-width: 1200px) {
+  #intro .container {
+    max-width: 1000px;
+  }
+}
+
+/* @media screen and (max-width: 1100px) {
+  #intro .container {
+    max-width: 950px;
+  }
+} */
+
+.introText {
+  position: static;
+  z-index: 1;
+  transform: translate3d(0, -3.6rem, 0);
+}
+.introText h4 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.introText h2 {
+  letter-spacing: 3px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 999px) {
+  .introText h4 {
+    font-size: 1rem;
+  }
+
+  .introText h2 {
+    font-size: 2rem;
+  }
+}
+
+.gridDots {
+  background-image: url(../assests/griddots.svg);
+  background-size: 24px 24px;
+  opacity: 0.15;
+  position: absolute;
+  top: 30%;
+  right: 0;
+  bottom: 0;
+  left: 30%;
+}
+
+.introPic {
+  background-image: url(../assests/hero-pic.jpg);
+  background-color: #02182c;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+#about {
+  background-color: white;
+  color: var(--color-dark);
+  width: 100%;
+  /* height: 2000px; */
+  margin: 3rem 0;
+  padding: 10rem 0;
+}
+.about-me {
+  margin-bottom: 10rem;
+}
+#about .heading h3 {
+  font-size: 22px;
+  color: var(--color-dark);
+  font-weight: 600;
+
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+#about .heading h3::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--color-primary);
+}
+
+#about .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  #about .content {
+    grid-template-columns: 1fr;
+  }
+}
+#about .content p {
+  font-size: 20px;
+  color: var(--color-dark);
+  font-weight: 300;
+
+  line-height: 30px;
+  position: relative;
+
+  font-family: cursive, sans-serif;
+}
+
+.btn-row {
+  margin-top: 3rem;
+}
+.btn-row a {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--color-dark);
+
+  text-align: center;
+  padding: 15px 0;
+
+  font-weight: 600;
+  letter-spacing: 5px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-row .btn-cntc {
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
+.btn-row .btn-cntc:hover {
+  color: var(--color-light-gray);
+  background-color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.btn-row .btn-cv {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-row .btn-cv:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+/* TImeline start */
+
+.timeline {
+  padding: 20px 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.12);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.timeline::after {
+  content: "";
+  display: block;
+  width: 5.6rem;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.12);
+  position: absolute;
+  left: 1px;
+  top: 0;
+}
+
+.timeline_icon {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: -2.2rem;
+  left: 5.6rem;
+}
+.timeline_icon svg {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  transform: translate3d(-50%, -50%, 0);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.timeline_block {
+  position: relative;
+  padding-left: 5.6rem;
+  padding-bottom: 0.8rem;
+  margin-top: 2.8rem;
+  min-height: 35rem;
+}
+
+.timeline_bullet {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 4.8rem;
+  background-color: #000000;
+  position: absolute;
+  left: -1px;
+  top: 8px;
+}
+
+.timeline_header {
+  margin-bottom: 3.2rem;
+}
+
+.timeline_header .timeline_timeframe {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.714;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-bottom: 0.8rem;
+  color: #000000;
+}
+
+.timeline_header h3 {
+  margin-bottom: 0;
+}
+.item-title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.222;
+  margin-top: 0;
+  color: #000000;
+}
+
+.timeline_header h5 {
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 1.333;
+  margin-top: 0;
+}
+.timeline_desc p {
+  line-height: 30px;
+}
+/* TImeline start */
