@@ -5,8 +5,10 @@ import {
 } from "./constants.js";
 import { getElement, addClasses } from "./helpers.js";
 
+let webNav = getElement(".webNav");
 let pageLinks = getElement(".pageLinks");
 let socialLinks = getElement(".socialLinks");
+let stickyNavbar = getElement("#stickyNavbar");
 let mobileNav = getElement(".mobileNav");
 let toggler = getElement(".toggler");
 let close = getElement(".close");
@@ -58,4 +60,15 @@ toggler.addEventListener("click", function () {
 
 close.addEventListener("click", function () {
   mobileNav.style.display = "none";
+});
+window.addEventListener("scroll", (e) => {
+  let scrollPos = window.scrollY;
+  let navPos = webNav.getBoundingClientRect().top;
+  if (scrollPos > navPos) {
+    stickyNavbar.classList.add("sticky");
+    // header.classList.add("navbarOffsetMargin");
+  } else {
+    stickyNavbar.classList.remove("sticky");
+    // header.classList.remove("navbarOffsetMargin");
+  }
 });
